@@ -3,7 +3,6 @@
 import { MainDatatable } from "@/components/shared/dataTable/mainData";
 import { LoginPopup } from "@/components/shared/loginPopup";
 import { useAccount } from "@/context/account.provider";
-import { dataSor } from "@/data";
 
 import Link from "next/link";
 import { ColumnDef } from "@tanstack/react-table";
@@ -37,7 +36,6 @@ function formatter(num: number, digits = 1) {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const MainTable = ({ posts }: any) => {
   const { openPop, isConnected, togglePopup } = useAccount();
-  console.log(posts);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const columns: ColumnDef<ITokenInfo, any>[] = [
@@ -174,7 +172,7 @@ export const MainTable = ({ posts }: any) => {
 
   return (
     <>
-      <MainDatatable columns={columns} data={dataSor} />
+      <MainDatatable columns={columns} data={posts} />
       {openPop && <LoginPopup />}
     </>
   );
