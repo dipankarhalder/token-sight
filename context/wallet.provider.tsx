@@ -19,12 +19,13 @@ createAppKit({
   adapters: [wagmiAdapter],
   projectId,
   networks: [mainnet, arbitrum, solana],
-  defaultNetwork: solana,
+  defaultNetwork: mainnet,
   metadata: metadata,
   features: {
     analytics: true,
     connectMethodsOrder: ["wallet"],
   },
+  themeMode: "dark",
   themeVariables: {
     "--w3m-color-mix": "#00BB7F",
     "--w3m-font-size-master": "9px",
